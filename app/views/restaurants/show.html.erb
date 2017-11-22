@@ -31,7 +31,15 @@
               <p> <%= review.content %> </p>
             </div>
             <div class="details">
-              <p> <%= '*' * review.rating %></p>
+              <p>
+                <% review.rating.times do %>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                <% end %>
+
+                <% (5-review.rating).times do %>
+                  <i class="fa fa-star-o" aria-hidden="true"></i>
+                <% end %>
+              </p>
             </div>
         </div>
       </div>
