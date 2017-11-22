@@ -1,7 +1,20 @@
-<%= link_to "Create new restaurant", new_restaurant_path %>
+<!-- <%= link_to "Create new restaurant", new_restaurant_path %> -->
 
-<% @restaurants.each do |restaurant| %>
-  <h2> <%= restaurant.name %> </h2>
-  <p> <%= restaurant.category %> </p>
-  <%= link_to "See details", restaurant_path(restaurant) %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <% @restaurants.each do |restaurant| %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="card">
+          <%= link_to restaurant_path(restaurant) do%>
+            <div class="presentation restaurant">
+              <h2> <%= restaurant.name %> </h2>
+            </div>
+            <div class="details">
+              <p> <%= restaurant.category %> </p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
